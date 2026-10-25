@@ -18,7 +18,7 @@ Sur Windows, tu peux installer yt-dlp et ffmpeg via [scoop](https://scoop.sh/) o
 ## Installation
 
 ```bash
-git clone https://github.com/<TON_USER>/ClipShift.git
+git clone https://github.com/aymaneghnnam8-lgtm/ClipShift.git
 cd ClipShift
 npm install
 copy .env.example .env
