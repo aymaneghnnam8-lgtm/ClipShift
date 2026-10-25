@@ -1,0 +1,10 @@
+node_modules/
+.env
+downloads/
+uploads/
+temp/
+cookies/*
+!cookies/README.txt
+*.log
+.DS_Store
+Thumbs.db

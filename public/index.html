@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>ClipShift — Télécharge & convertis</title>
+    <meta
+      name="description"
+      content="Télécharge et convertis tes vidéos YouTube, Facebook, Instagram et plus encore."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="/">
+        <span class="logo__mark" aria-hidden="true">C</span>
+        ClipShift
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link is-active" href="/">Accueil</a>
+        <a class="nav__link" href="/youtube">YouTube</a>
+        <a class="nav__link" href="/instagram">Instagram</a>
+        <a class="nav__link" href="/facebook">Facebook</a>
+        <a class="nav__link" href="/tiktok">TikTok</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="accueil" class="hero" data-home-auto="true">
+      <section class="hero__copy">
+        <p class="brand-mark">ClipShift</p>
+        <h1 class="hero__title">
+          Télécharge &amp; convertis en <span>un clic</span>
+        </h1>
+        <p class="hero__lead">
+          Colle n’importe quel lien YouTube, Instagram, Facebook ou TikTok —
+          ClipShift détecte la plateforme automatiquement.
+        </p>
+
+        <form id="convert-form" class="convert-form" novalidate>
+          <div class="url-combo">
+            <label class="url-field url-field--combo">
+              <span class="visually-hidden">Lien de la vidéo</span>
+              <svg class="url-field__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10 13a5 5 0 0 0 7.54.54l1.92-1.92a5 5 0 0 0-7.07-7.07L10.8 6.14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M14 11a5 5 0 0 0-7.54-.54L4.54 12.38a5 5 0 0 0 7.07 7.07l1.59-1.59"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <input
+                id="video-url"
+                name="url"
+                type="url"
+                placeholder="Collez un lien YouTube, Instagram, Facebook ou TikTok…"
+                autocomplete="off"
+                required
+              />
+            </label>
+            <button type="submit" class="btn btn--primary btn--combo" id="btn-convert">
+              Convertir
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <input id="file-input" type="file" accept="video/*,audio/*" hidden />
+
+          <p id="detected-platform" class="detected-platform" aria-live="polite">
+            Plateforme : détection automatique
+          </p>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <ul class="platforms" aria-label="Plateformes supportées">
+          <li>YouTube</li>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>TikTok</li>
+        </ul>
+      </section>
+
+      <section class="hero__preview" aria-label="Aperçu">
+        <div class="player">
+          <p id="preview-title" class="preview-title">Aperçu vidéo</p>
+          <div class="player__frame" id="player-frame">
+            <div class="player__scene" id="player-scene"></div>
+            <img id="preview-thumb" class="player__thumb" alt="" hidden />
+            <div id="preview-embed" class="player__embed" hidden></div>
+            <button type="button" class="player__play" id="player-play" aria-label="Lecture">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M8 5.5v13l11-6.5L8 5.5z" />
+              </svg>
+            </button>
+            <div class="player__bar">
+              <button type="button" id="bar-play" aria-label="Play">▶</button>
+              <span id="preview-time">00:00 / 00:00</span>
+              <div class="player__progress"><i></i></div>
+              <button type="button" aria-label="Volume">🔊</button>
+              <button type="button" aria-label="Réglages">⚙</button>
+              <button type="button" aria-label="Plein écran">⛶</button>
+            </div>
+          </div>
+
+          <div id="formats" class="format-pills" role="group" aria-label="Format de sortie">
+            <button type="button" class="format-pill is-active" data-format="mp4">MP4</button>
+            <button type="button" class="format-pill" data-format="mp3">MP3</button>
+            <button type="button" class="format-pill" data-format="webm">WebM</button>
+          </div>
+
+          <div id="quality-group" class="quality-row">
+            <span class="option-label">Qualité</span>
+            <div class="format-pills" role="group" aria-label="Qualité vidéo">
+              <button type="button" class="format-pill" data-quality="360">360p</button>
+              <button type="button" class="format-pill" data-quality="480">480p</button>
+              <button type="button" class="format-pill is-active" data-quality="720">720p</button>
+              <button type="button" class="format-pill" data-quality="1080">1080p</button>
+              <button type="button" class="format-pill" data-quality="best">Max</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="feature-strip" aria-label="Pages plateformes">
+      <a class="feature-strip__item" href="/youtube">
+        <span class="feature-strip__icon" aria-hidden="true">▶</span>
+        <strong>YouTube</strong>
+        <span>Page dédiée pour télécharger des vidéos YouTube.</span>
+      </a>
+      <a class="feature-strip__item" href="/instagram">
+        <span class="feature-strip__icon" aria-hidden="true">▣</span>
+        <strong>Instagram</strong>
+        <span>Reels, posts et stories en haute qualité.</span>
+      </a>
+      <a class="feature-strip__item" href="/facebook">
+        <span class="feature-strip__icon" aria-hidden="true">f</span>
+        <strong>Facebook</strong>
+        <span>Sauvegarde rapide des vidéos publiques.</span>
+      </a>
+      <a class="feature-strip__item" href="/tiktok">
+        <span class="feature-strip__icon" aria-hidden="true">♪</span>
+        <strong>TikTok</strong>
+        <span>Télécharge en MP4 ou MP3 sans watermark.</span>
+      </a>
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Quelles plateformes sont supportées ?</summary>
+        <p>
+          Sur l’accueil, un seul formulaire détecte YouTube, Instagram, Facebook
+          ou TikTok. Chaque plateforme a aussi sa page dédiée pour le
+          référencement.
+        </p>
+      </details>
+      <details>
+        <summary>Quels formats puis-je obtenir ?</summary>
+        <p>MP4 pour la vidéo, MP3 pour l’audio, WebM pour un format web léger.</p>
+      </details>
+      <details>
+        <summary>Mes fichiers sont-ils conservés ?</summary>
+        <p>Non. Les fichiers temporaires sont nettoyés après traitement.</p>
+      </details>
+    </section>
+
+    <footer class="site-footer">
+      <span>ClipShift</span>
+      <span>Téléchargement &amp; conversion vidéo</span>
+    </footer>
+
+    <script src="/js/app.js" defer></script>
+  </body>
+</html>
