@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Télécharger une vidéo Facebook — ClipShift</title>
+    <meta name="description" content="Télécharge les vidéos et Reels Facebook publics en MP4 ou MP3." />
+    <meta name="theme-color" content="#06060f" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-platform-page="facebook">
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="logo" href="/">
+          <img class="logo__mark" src="/logo.svg" width="32" height="32" alt="" decoding="async" />
+          ClipShift
+        </a>
+        <nav class="nav" aria-label="Navigation principale">
+          <a class="nav__link" href="/">Accueil</a>
+          <a class="nav__link" href="/youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.4v5.2l4.6-2.6z" fill="currentColor"/></svg> YouTube</a>
+          <a class="nav__link" href="/instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg> Instagram</a>
+          <a class="nav__link is-active" href="/facebook" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 8H17V4.5h-2.5a4 4 0 0 0-4 4V11H8v3.5h2.5V21H14v-6.5h2.6l.4-3.5h-3V9a1 1 0 0 1 1-1z"/></svg> Facebook</a>
+          <a class="nav__link" href="/tiktok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.3 4.4 5 4.6"/></svg> TikTok</a>
+          <a class="nav__link" href="/#faq">FAQ</a>
+        </nav>
+        <a class="header-cta" href="#convert-form">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
+          Gratuit
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container hero">
+        <section class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__dot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></span>Facebook → MP4, MP3</p>
+          <h1 class="hero__title">Télécharge &amp; convertis <span class="grad">en un clic</span></h1>
+          <p class="hero__lead">Colle le lien d’une vidéo ou d’un Reel Facebook public, choisis le format, puis télécharge.</p>
+
+          <form id="convert-form" class="card converter" novalidate>
+            <div class="url-combo">
+              <svg class="url-combo__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l1.92-1.92a5 5 0 0 0-7.07-7.07L10.8 6.14"/><path d="M14 11a5 5 0 0 0-7.54-.54l-1.92 1.92a5 5 0 0 0 7.07 7.07l1.59-1.59"/></svg>
+              <label class="visually-hidden" for="video-url">Lien de la vidéo</label>
+              <input
+                id="video-url"
+                name="url"
+                type="url"
+                inputmode="url"
+                placeholder="Colle ton lien Facebook…"
+                autocomplete="off"
+                spellcheck="false"
+                required
+              />
+              <button type="button" class="icon-btn" id="btn-clear" aria-label="Effacer le lien" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+              <button type="button" class="paste-btn" id="btn-paste" aria-label="Coller depuis le presse-papiers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 4.5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v.5a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg><span>Coller</span></button>
+              <button type="submit" class="btn btn--primary" id="btn-convert">
+                <span class="btn__label">Convertir</span>
+                <span class="btn__spinner" aria-hidden="true"></span>
+                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+
+            <div class="options" id="options">
+              <span class="options__label" id="lbl-format">Format</span>
+              <div class="segmented segmented--accent" id="formats" role="radiogroup" aria-labelledby="lbl-format">
+                <button type="button" role="radio" aria-checked="true" class="is-active" data-format="mp4">MP4</button>
+                <button type="button" role="radio" aria-checked="false" data-format="mp3">MP3</button>
+                <button type="button" role="radio" aria-checked="false" data-format="webm">WebM</button>
+              </div>
+              <span class="options__label options__label--quality" id="lbl-quality">Qualité</span>
+              <div class="segmented options__row--quality" id="quality-group" role="radiogroup" aria-labelledby="lbl-quality">
+                <button type="button" role="radio" aria-checked="false" data-quality="360">360p</button>
+                <button type="button" role="radio" aria-checked="false" data-quality="480">480p</button>
+                <button type="button" role="radio" aria-checked="true" class="is-active" data-quality="720">720p</button>
+                <button type="button" role="radio" aria-checked="false" data-quality="1080">1080p</button>
+                <button type="button" role="radio" aria-checked="false" data-quality="best">Max</button>
+              </div>
+            </div>
+          </form>
+
+          <p id="detected-platform" class="detected" aria-live="polite">
+            <span class="detected__dot" aria-hidden="true"></span>
+            <span class="detected__text">Plateforme : détection automatique</span>
+          </p>
+
+          <ul class="platforms" aria-label="Plateformes supportées">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.4v5.2l4.6-2.6z" fill="currentColor"/></svg> YouTube</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg> Instagram</li>
+            <li class="is-current"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 8H17V4.5h-2.5a4 4 0 0 0-4 4V11H8v3.5h2.5V21H14v-6.5h2.6l.4-3.5h-3V9a1 1 0 0 1 1-1z"/></svg> Facebook</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.3 4.4 5 4.6"/></svg> TikTok</li>
+          </ul>
+          <p class="note">Vidéos publiques uniquement.</p>
+        </section>
+
+        <section class="card panel" aria-label="Aperçu et téléchargement">
+          <div class="media" id="media">
+            <div class="media__empty">
+              <span class="media__empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 4l2 5M14 4l2 5"/><path d="M10.5 12.5v4l3.5-2z" fill="currentColor"/></svg></span>
+              <span>Colle un lien pour voir l’aperçu ici</span>
+            </div>
+            <img id="preview-thumb" class="media__thumb" alt="" referrerpolicy="no-referrer" />
+            <div class="media__shade"></div>
+            <span class="badge badge--platform" id="preview-platform" hidden></span>
+            <span class="badge badge--duration" id="preview-duration" hidden></span>
+            <button type="button" class="media__play" id="player-play" aria-label="Lire l’aperçu"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg></button>
+            <div id="preview-embed" class="media__embed" hidden></div>
+          </div>
+
+          <div class="meta">
+            <p class="meta__title" id="preview-title">Aucune vidéo sélectionnée</p>
+            <p class="meta__sub" id="preview-sub">MP4, MP3 ou WebM · jusqu’en 1080p</p>
+          </div>
+
+          <div class="job" id="job" hidden aria-live="polite">
+            <div class="job__head">
+              <span class="job__label"><span class="job__icon" id="job-icon"></span><span id="job-text">Préparation…</span></span>
+              <span class="job__pct" id="job-pct"></span>
+            </div>
+            <div class="progress" id="job-progress"><div class="progress__bar" id="job-bar"></div></div>
+            <div class="job__actions" id="job-actions" hidden></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="section__kicker">Comment ça marche</p>
+            <h2 class="section__title">Trois étapes, zéro installation.</h2>
+          </div>
+          <div class="grid grid--3">
+            <div class="tile reveal"><span class="tile__step">01</span><strong>Colle le lien</strong><p>Copie l’URL de la vidéo depuis l’appli ou le navigateur et colle-la ci-dessus.</p></div>
+            <div class="tile reveal"><span class="tile__step">02</span><strong>Choisis le format</strong><p>MP4 pour la vidéo, MP3 pour l’audio, WebM pour un fichier léger — de 360p à Max.</p></div>
+            <div class="tile reveal"><span class="tile__step">03</span><strong>Télécharge</strong><p>Suis la progression en direct, puis récupère ton fichier en un clic.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="section__kicker">Plateformes</p>
+            <h2 class="section__title">Une page dédiée pour chaque réseau.</h2>
+          </div>
+          <div class="grid grid--4">
+            <a class="tile reveal" href="/youtube"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.4v5.2l4.6-2.6z" fill="currentColor"/></svg></span><strong>YouTube</strong><p>Vidéos, Shorts et musique en MP4 ou MP3.</p><span class="tile__more">Ouvrir →</span></a>
+            <a class="tile reveal" href="/instagram"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></span><strong>Instagram</strong><p>Reels et publications vidéo publiques.</p><span class="tile__more">Ouvrir →</span></a>
+            <a class="tile reveal" href="/facebook"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 8H17V4.5h-2.5a4 4 0 0 0-4 4V11H8v3.5h2.5V21H14v-6.5h2.6l.4-3.5h-3V9a1 1 0 0 1 1-1z"/></svg></span><strong>Facebook</strong><p>Vidéos et Reels publics, sauvegarde rapide.</p><span class="tile__more">Ouvrir →</span></a>
+            <a class="tile reveal" href="/tiktok"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.3 4.4 5 4.6"/></svg></span><strong>TikTok</strong><p>Clips TikTok en MP4 ou extraits audio MP3.</p><span class="tile__more">Ouvrir →</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container faq">
+          <div class="section__head reveal">
+            <p class="section__kicker">FAQ</p>
+            <h2 class="section__title">Questions fréquentes</h2>
+          </div>
+          <details>
+            <summary>Quelles plateformes sont supportées ?</summary>
+            <p>YouTube, Instagram, Facebook et TikTok. Sur l’accueil, ClipShift détecte la plateforme automatiquement à partir du lien.</p>
+          </details>
+          <details>
+            <summary>Quels formats puis-je obtenir ?</summary>
+            <p>MP4 pour la vidéo, MP3 pour l’audio seul, WebM pour un format web léger. La qualité va de 360p à « Max » (meilleure qualité disponible).</p>
+          </details>
+          <details>
+            <summary>Pourquoi certaines vidéos échouent ?</summary>
+            <p>Les vidéos privées, réservées aux abonnés ou soumises à une restriction d’âge ne sont pas accessibles. Instagram et Facebook bloquent parfois les contenus sans session connectée.</p>
+          </details>
+          <details>
+            <summary>Mes fichiers sont-ils conservés ?</summary>
+            <p>Non. Les fichiers sont supprimés automatiquement du serveur environ une heure après la conversion.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <span>© ClipShift — Téléchargement &amp; conversion vidéo</span>
+        <span>Respecte les droits d’auteur et les conditions des plateformes.</span>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/js/config.js"></script>
+    <script src="/js/app.js" defer></script>
+  </body>
+</html>
